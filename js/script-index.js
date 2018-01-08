@@ -16,15 +16,14 @@ printNews();
 * marcado el atributo "highlighted" como TRUE
 */
 function renderHighlightedRecipes(recipesArray) {
-	console.log('Recipes: ', recipesArray);
+	//console.log('Recipes: ', recipesArray);
 	for (i=0; i<recipesArray.length; i++){
-		if(recipesArray[i].highlighted = true){
-			//console.log("esto funciona");
-		} renderRecipe(recipesArray[i]);
-		//console.log(recipe);
+		if(recipesArray[i].hasOwnProperty('highlighted') == true){
+			renderRecipe(recipesArray[i]);
+			//console.log(recipesArray[i]);
+		}
 	}
 }
-
 /*
 * Función que se encarga de pintar UNA recetas que tenga
 * marcado el atributo "highlighted" como TRUE
@@ -32,11 +31,24 @@ function renderHighlightedRecipes(recipesArray) {
 * archivo "templates/templates-recipe.html"
 */
 function renderRecipe(recipe) {
-	console.log('Voy a pintar la receta: ', recipe);
+	//console.log('Voy a pintar la receta: ', recipe);
+//crear html e imprimirlo en la clase list-recipe
+	for (i=0; i<recipe.length; i++){
+		$('.list-recipes').append('<a href = "#" class = "item-recipe">' +
+		       '<span class = "attribution">'+
+		       '<span class = "title-recipe">' + recipe[i].title +
+					 '</span>' +
+		       '<span class = "metadata-recipe">'+
+		       '<span class = "author-recipe" >' + recipe[i].source.name + '</span>' +
+		       '<span class = "bookmark-recipe">' +
+					 '<span class = "icon-bookmark"></span>' +
+					 '</span>' +
+					 '</span>' +
+		       '</span>' +
+					 '<img src="assets/' +   + '">' +
+		       '</a>')
+	}
 }
-
-
-
 /*
 * Función que se encarga de pintar todas las actividades
 */
