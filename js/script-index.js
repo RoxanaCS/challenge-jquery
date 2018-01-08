@@ -35,10 +35,7 @@ function renderRecipe(recipe) {
 	//console.log('Voy a pintar la receta: ', recipe);
   //crear html e imprimirlo en la clase list-recipes
 	$('.list-recipes').append(
-		'<a class="item-recipe" href="#">' +
-		'<span class = "title-recipe">' + recipe.title + '</span>' +
-		'<span class = "author-recipe" >' + recipe.source.name + '</span>' +
-		'</a>'
+
 		)
 }
 /*
@@ -46,7 +43,7 @@ function renderRecipe(recipe) {
 */
 var activitiesArray = activities;
 function renderActivities(activitiesArray) {
-	console.log('Activities: ', activitiesArray);
+	//console.log('Activities: ', activitiesArray);
 	for (var i=0; i<activitiesArray.length;i++){
 		renderActivity(activitiesArray[i]);
 		if(activitiesArray.length > 0){
@@ -64,29 +61,17 @@ renderActivities(activitiesArray);
 function renderActivity(recipe) {
 	$('.list-activities').append(
 		'<a class="item-activity" href="#">' +
-			'<span class = "attribution">' +
-				'<span class = "avatar">' +
-					'<img class = "image-avatar" src="' + recipe.userAvatar + '">' +
-				'</span>' +
-				'<span class = "meta">' +
-				'<span class = "author-recipe" >' + recipe.userName + '</span>' +
-				'<span class = "author-recipe" >' + recipe.recipeName + '</span>' +
-				'<span class = "author-recipe" >' + recipe.place + '</span>' +
-				'</span>' +
-			'</span>' +
-			'<div class = "bg-image" style="background-image: url(' + recipe.image + ')" >' + '</div>' +
+		'<span class = "attribution">' +
+		'<span class = "avatar">' +
+		'<img class = "image-avatar" src="' + recipe.userAvatar + '">' +
+		'</span>' +
+		'<span class = "meta">' +
+		'<span class = "author" >' + recipe.userName + '</span>' + " made " +
+		'<span class = "recipe" >' + recipe.recipeName + '</span>' +
+		'<span class = "location" >' + ' &mdash;' + recipe.place + '</span>' +
+		'</span>' +
+		'</span>' +
+		'<div class = "bg-image" style="background-image: url(' + recipe.image + ')" >' + '</div>' +
 		'</a>'
 		)
 }
-/*'<a href = "#" class = "item-recipe">' +
-				 '<span class = "attribution">'+
-				 '<span class = "title-recipe">' + recipe.title + '</span>' +
-				 '<span class = "metadata-recipe">'+
-				 '<span class = "author-recipe" >' + recipe.source.name + '</span>' +
-				 '<span class = "bookmark-recipe">' +
-				 '<span class = "icon-bookmark">' + '</span>' +
-				 '</span>' +
-				 '</span>' +
-				 '</span>' +
-				// '<img src="assets/' +   + '">' +
-				 '</a>'*/
