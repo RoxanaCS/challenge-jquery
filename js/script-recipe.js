@@ -4,7 +4,7 @@ $(document).ready( function(){
 	renderHighlightedRecipes(recipesArray);
 
 });
-//ocultando flecha
+//ocultando menu
 $('.js-menu').hide();
 /*
 * Función que se encarga de pintar TODAS las recetas que tengan

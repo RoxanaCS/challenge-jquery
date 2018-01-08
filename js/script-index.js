@@ -6,6 +6,11 @@ $(document).ready( function(){
 });
 //ocultando flecha
 $('.js-back').hide();
+//Función para imprimir una noticia
+var printNews = function(){
+	$('#news').html('NUEVAS RECETAS');
+}
+printNews();
 /*
 * Función que se encarga de pintar TODAS las recetas que tengan
 * marcado el atributo "highlighted" como TRUE
