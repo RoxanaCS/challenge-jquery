@@ -31,7 +31,7 @@ function renderHighlightedRecipes(recipesArray) {
 */
 
 function renderRecipe(recipe) {
-	console.log(recipe.source.name);
+	//console.log(recipe.source.name);
 	//console.log('Voy a pintar la receta: ', recipe);
   //crear html e imprimirlo en la clase list-recipes
 	$('.list-recipes').append(
@@ -44,9 +44,17 @@ function renderRecipe(recipe) {
 /*
 * Función que se encarga de pintar todas las actividades
 */
+var activitiesArray = activities;
 function renderActivities(activitiesArray) {
 	console.log('Activities: ', activitiesArray);
+	for (var i=0; i<activitiesArray.length;i++){
+		renderActivity(activitiesArray[i]);
+		if(activitiesArray.length > 0){
+			$('.wrapper-message').hide();
+		}
+	}
 }
+renderActivities(activitiesArray);
 
 /*
 * Función que se encarga de pintar una actividad
