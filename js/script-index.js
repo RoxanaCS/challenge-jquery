@@ -17,6 +17,12 @@ printNews();
 */
 function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
+	for (i=0; i<recipesArray.length; i++){
+		if(recipesArray[i].highlighted = true){
+			//console.log("esto funciona");
+		} renderRecipe(recipesArray[i]);
+		//console.log(recipe);
+	}
 }
 
 /*
