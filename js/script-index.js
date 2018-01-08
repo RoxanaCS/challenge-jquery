@@ -17,10 +17,9 @@ printNews();
 */
 function renderHighlightedRecipes(recipesArray) {
 	//console.log('Recipes: ', recipesArray);
-	for (i=0; i<recipesArray.length; i++){
+	for (var i=0; i<recipesArray.length; i++){
 		if(recipesArray[i].hasOwnProperty('highlighted') == true){
 			renderRecipe(recipesArray[i]);
-			//console.log(recipesArray[i]);
 		}
 	}
 }
@@ -30,24 +29,17 @@ function renderHighlightedRecipes(recipesArray) {
 * Aqui se tiene que crear el HTML que esta en el
 * archivo "templates/templates-recipe.html"
 */
+
 function renderRecipe(recipe) {
+	console.log(recipe.source.name);
 	//console.log('Voy a pintar la receta: ', recipe);
-//crear html e imprimirlo en la clase list-recipe
-	for (i=0; i<recipe.length; i++){
-		$('.list-recipes').append('<a href = "#" class = "item-recipe">' +
-		       '<span class = "attribution">'+
-		       '<span class = "title-recipe">' + recipe[i].title +
-					 '</span>' +
-		       '<span class = "metadata-recipe">'+
-		       '<span class = "author-recipe" >' + recipe[i].source.name + '</span>' +
-		       '<span class = "bookmark-recipe">' +
-					 '<span class = "icon-bookmark"></span>' +
-					 '</span>' +
-					 '</span>' +
-		       '</span>' +
-					 '<img src="assets/' +   + '">' +
-		       '</a>')
-	}
+  //crear html e imprimirlo en la clase list-recipes
+	$('.list-recipes').append(
+		'<a class="item-recipe" href="#">' +
+		'<span class = "title-recipe">' + recipe.title + '</span>' +
+		'<span class = "author-recipe" >' + recipe.source.name + '</span>' +
+		'</a>'
+		)
 }
 /*
 * Función que se encarga de pintar todas las actividades
@@ -64,3 +56,15 @@ function renderActivities(activitiesArray) {
 function renderActivity(recipe) {
 
 }
+/*'<a href = "#" class = "item-recipe">' +
+				 '<span class = "attribution">'+
+				 '<span class = "title-recipe">' + recipe.title + '</span>' +
+				 '<span class = "metadata-recipe">'+
+				 '<span class = "author-recipe" >' + recipe.source.name + '</span>' +
+				 '<span class = "bookmark-recipe">' +
+				 '<span class = "icon-bookmark">' + '</span>' +
+				 '</span>' +
+				 '</span>' +
+				 '</span>' +
+				// '<img src="assets/' +   + '">' +
+				 '</a>'*/
