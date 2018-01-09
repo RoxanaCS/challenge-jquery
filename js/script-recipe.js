@@ -17,3 +17,8 @@ $('.js-show-make').click(function(){
 	$('.js-show-make').addClass('active');
 	$('.js-show-recipe').removeClass('active');
 });
+
+//flecha para atrás
+$('.js-back').click(function(){
+	window.location.href = "file:///C:/Users/Roxana/Documents/challenge-jquery/index.html";
+})

@@ -31,11 +31,21 @@ function renderHighlightedRecipes(recipesArray) {
 */
 
 function renderRecipe(recipe) {
-	//console.log(recipe.source.name);
 	//console.log('Voy a pintar la receta: ', recipe);
   //crear html e imprimirlo en la clase list-recipes
 	$('.list-recipes').append(
-
+		'<a class="item-recipe" href="#">' +
+		'<span class = "attribution">' +
+		'<span class = "title-recipe">' + recipe.title + '</span>' +
+		'<span class = "metadata-recipe">' +
+		'<span class = "author-recipe" >' + recipe.source.name + '</span>' +
+		'<span class = "bookmarks-recipe">' +
+		'<span class = "icon-bookmark" >' + '</span>' +
+		'</span>' +
+		'</span>' +
+		'</span>' +
+		'<img src="img/recipes/640x480/' + recipe.name + '.jpg">' +
+		'</a>'
 		)
 }
 /*
@@ -66,9 +76,9 @@ function renderActivity(recipe) {
 		'<img class = "image-avatar" src="' + recipe.userAvatar + '">' +
 		'</span>' +
 		'<span class = "meta">' +
-		'<span class = "author" >' + recipe.userName + '</span>' + " made " +
-		'<span class = "recipe" >' + recipe.recipeName + '</span>' +
-		'<span class = "location" >' + ' &mdash;' + recipe.place + '</span>' +
+		'<span class = "author">' + recipe.userName + '</span>' + " made " +
+		'<span class = "recipe">' + recipe.recipeName + '</span>' +
+		'<span class = "location">' + ' &mdash;' + recipe.place + '</span>' +
 		'</span>' +
 		'</span>' +
 		'<div class = "bg-image" style="background-image: url(' + recipe.image + ')" >' + '</div>' +
